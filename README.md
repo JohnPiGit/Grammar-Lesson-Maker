@@ -15,29 +15,11 @@ Minimally cobbled together project for making lessons for https://github.com/Joh
 
 ---
 
-## File Structure
-
-```text
-.
-├── server.py                   # Local web server & API
-├── jp_lesson.py                # Validation & storage logic (try_check_json)
-├── generate_lesson_prompt.md   # LLM system prompt instructions
-├── grammar_topics.txt          # Newline-delimited list of grammar topics
-├── lessons.json                # Master JSON database (SHA-256 keyed)
-└── static/
-    ├── index.html              # UI markup & instructions
-    ├── style.css               # Minimal styling & toast notifications
-    └── app.js                  # Frontend clipboard & API orchestration
-```
-
----
 
 ## Getting Started
 
-### Prerequisites
-
-- Python 3.9+
-- A modern web browser (Chrome, Firefox, Edge, Safari) that supports the Clipboard API.
+- `git clone https://github.com/JohnPiGit/Grammar-Lesson-Maker.git`
+- `cd Grammar-Lesson-Maker`
 
 ### Running the Server
 
