@@ -15,6 +15,7 @@ STATIC_DIR = BASE_DIR / "static"
 TOPICS_FILE = BASE_DIR / "grammar_topics.txt"
 PROMPT_FILE = BASE_DIR / "generate_lesson_prompt.md"
 
+
 def get_completed_hashes() -> set[str]:
     """Reads existing topic hashes from lessons.json."""
     try:
@@ -24,10 +25,25 @@ def get_completed_hashes() -> set[str]:
         return set()
 
 
-def get_next_topic() -> str | None:
-    """Finds the first topic in topics file not yet present in lessons.json."""
+def get_topic_progress() -> tuple[str | None, int, int]:
+    """Returns (next_topic, remaining_count, total_count)."""
     if not TOPICS_FILE.exists():
-        return None
+        return None, 0, 0
+
+    completed = get_completed_hashes()
+    missing: list[str] = []
+    total = 0
+
+    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
+        for line in f:
+            topic = line.strip()
+            if topic:
+                total += 1
+                if key_from_topic(topic) not in completed:
+                    missing.append(topic)
+
+    next_topic = missing[0] if missing else None
+    return next_topic, len(missing), total
 
     completed = get_completed_hashes()
     with open(TOPICS_FILE, "r", encoding="utf-8") as f:
@@ -81,13 +97,18 @@ class AppRequestHandler(BaseHTTPRequestHandler):
             self._serve_file(STATIC_DIR / self.path.lstrip("/"))
         # API routing
         elif self.path == "/api/topic":
-            topic = get_next_topic()
-            self._send_json({"done": topic is None, "topic": topic or ""})
+            topic, remaining, total = get_topic_progress()
+            self._send_json(
+                {
+                    "done": topic is None,
+                    "topic": topic or "",
+                    "remaining": remaining,
+                    "total": total,
+                }
+            )
         elif self.path == "/api/system-prompt":
             content = (
-                PROMPT_FILE.read_text(encoding="utf-8")
-                if PROMPT_FILE.exists()
-                else ""
+                PROMPT_FILE.read_text(encoding="utf-8") if PROMPT_FILE.exists() else ""
             )
             self._send_json({"prompt": content})
         else:

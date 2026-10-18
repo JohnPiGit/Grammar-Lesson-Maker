@@ -13,6 +13,7 @@ const doneScreen = document.getElementById('done-screen');
 const toastContainer = document.getElementById('toast-container');
 const systemPromptBox = document.getElementById('system-prompt-box');
 const copySystemPromptBtn = document.getElementById('copy-system-prompt-btn');
+const progressDisplay = document.getElementById('progress-display');
 
 let currentTopic = '';
 
@@ -63,8 +64,11 @@ async function loadNextTopic() {
       return;
     }
 
+    const percentRemaining = (data.remaining / data.total * 100.0).toFixed(2) + '%';
+    
     currentTopic = data.topic;
     topicDisplay.textContent = currentTopic;
+    progressDisplay.textContent = `${data.remaining} of ${data.total} remaining (${percentRemaining})`;
 
     // Automatically copy the newly loaded topic
     const copied = await copyToClipboard(currentTopic);

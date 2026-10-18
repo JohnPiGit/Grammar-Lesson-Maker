@@ -33,6 +33,13 @@ body {
   font-weight: 600;
 }
 
+#progress-display {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--status-color);
+  margin-bottom: 8px;
+}
+
 button {
   padding: 6px 12px;
   font-size: 0.9rem;
