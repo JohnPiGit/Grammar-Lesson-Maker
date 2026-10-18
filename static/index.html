@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div id="toast-container"></div>
+    <div id="done-screen" class="hidden">All Lessons Completed</div>
+
+    <main id="main-ui">
+        <section id="instructions-section">
+            <ol class="instructions-list">
+                <li>Copy this system prompt and put it into the chat bot to use for your lesson making session</li>
+                <li>Copy Grammar Topic (will automatically be copied each new topic)</li>
+                <li>Paste into chat bot</li>
+                <li>Copy chat bot generated json</li>
+                <li>Click "Read Clipboard and submit"</li>
+                <li>If there was an error, a prompt will be copied to your clipboard</li>
+                <li>Paste into a lesser model to correct the json</li>
+                <li>Repeat, ensuring you clear the chat bot history each time</li>
+            </ol>
+            <div class="system-prompt-container">
+                <textarea id="system-prompt-box" readonly rows="5" placeholder="Loading system prompt..."></textarea>
+                <div>
+                    <button id="copy-system-prompt-btn" type="button">Copy System Prompt</button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+        <!-- 1. Topic display & Copy -->
+        <section class="row">
+            <span id="topic-display">Loading...</span>
+            <button id="copy-topic-btn" type="button">Copy</button>
+        </section>
+
+        <div id="status-message"></div>
+
+        <!-- 2. Read Clipboard / Submit -->
+        <section class="row">
+            <button id="submit-btn" class="primary-btn" type="button">Read Clipboard & Submit</button>
+        </section>
+
+        <!-- 3. Dynamic Fix Prompt -->
+        <section id="error-section" class="hidden">
+            <textarea id="prompt-box" readonly rows="8"></textarea>
+            <div>
+                <button id="copy-prompt-btn" type="button">Copy Fix Prompt</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+</body>
+
+</html>
