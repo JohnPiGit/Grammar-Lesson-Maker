@@ -1,5 +1,6 @@
 import hashlib
 import json
+from collections.abc import Callable
 from pathlib import Path
 
 from lesson_structure import Lesson
@@ -12,21 +13,26 @@ def key_from_topic(topic: str) -> str:
     """Returns SHA-256 hash of whitespace-trimmed topic."""
     return hashlib.sha256(topic.strip().encode("utf-8")).hexdigest()
 
+
 def read_lessons() -> dict:
     """Read in lessons.json."""
     if not LESSONS_FILE.exists():
         return {}
-        
+
     with open(LESSONS_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data
 
-def write_lessons(lessons:dict):
+
+def write_lessons(lessons: dict):
     """Write the lessons to lessons.json"""
     with open(LESSONS_FILE, "w") as f:
         json.dump(lessons, f, ensure_ascii=False, indent=2)
 
-def try_check_json(lesson_json: str, grammar_topic: str):
+
+def try_check_json(
+    lesson_json: str, grammar_topic: str, sorter: Callable[[dict], dict] | None = None
+):
     """
     tests if the jason string has the correct attributes
     writes the lesson to lesson.json if it was correct
@@ -47,4 +53,6 @@ def try_check_json(lesson_json: str, grammar_topic: str):
 
     lessons = read_lessons()
     lessons[key] = lesson
+    if sorter is not None:
+        lessons = sorter(lessons)
     write_lessons(lessons)

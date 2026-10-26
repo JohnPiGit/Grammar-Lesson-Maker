@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 import json
 import mimetypes
+from collections.abc import Callable
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -25,6 +27,30 @@ def get_completed_hashes() -> set[str]:
         return set()
 
 
+def reorder_json_dict(data: dict, keys: list[str]) -> dict:
+    """no-loss reorder the dict based on the list of keys. stick on the end any remaining data not in the key list"""
+    reordered_data = {key: data[key] for key in keys if key in data}
+    reordered_data.update(data)
+    return reordered_data
+
+
+def get_sorter() -> Callable[[dict], dict]:
+    """makes the json sorter that sorts based on the topic ordering"""
+    keys = [key_from_topic(topic) for topic in get_topics()]
+    return lambda data: reorder_json_dict(data, keys)
+
+
+def get_topics() -> list[str]:
+    """Get the list of topics"""
+    topics = []
+    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
+        for line in f:
+            topic = line.strip()
+            if topic:
+                topics.append(topic)
+    return topics
+
+
 def get_topic_progress() -> tuple[str | None, int, int]:
     """Returns (next_topic, remaining_count, total_count)."""
     if not TOPICS_FILE.exists():
@@ -34,24 +60,14 @@ def get_topic_progress() -> tuple[str | None, int, int]:
     missing: list[str] = []
     total = 0
 
-    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
-        for line in f:
-            topic = line.strip()
-            if topic:
-                total += 1
-                if key_from_topic(topic) not in completed:
-                    missing.append(topic)
+    topics = get_topics()
+    for topic in topics:
+        total += 1
+        if key_from_topic(topic) not in completed:
+            missing.append(topic)
 
     next_topic = missing[0] if missing else None
     return next_topic, len(missing), total
-
-    completed = get_completed_hashes()
-    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
-        for line in f:
-            topic = line.strip()
-            if topic and key_from_topic(topic) not in completed:
-                return topic
-    return None
 
 
 class AppRequestHandler(BaseHTTPRequestHandler):
@@ -135,7 +151,9 @@ class AppRequestHandler(BaseHTTPRequestHandler):
                 return
 
             # Invoke custom validation logic
-            try_check_json(lesson_json=json_str, grammar_topic=topic)
+            try_check_json(
+                lesson_json=json_str, grammar_topic=topic, sorter=get_sorter()
+            )
             self._send_json({"success": True})
 
         except Exception as err:
