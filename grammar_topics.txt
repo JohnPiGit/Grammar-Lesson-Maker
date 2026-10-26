@@ -1,84 +1,158 @@
-The particle より
-The particle が
+The copula だ and です
+The sentence ending particle か
+The sentence ending particles ね and よ
 The particle は
+The particle も
+The noun-modifying particle の
+The particle を
 The particle に
-The sentence ending particle の
-Transitive verbs
-Intransitive verbs (not transitive verbs)
-Conjugation of な adjectives
-Conjugation of い adjectives
-Conjugation of る verbs
-Conjugation of う verbs
-The particle から
-The particle たら
-The particle たり
-The particle には
+へ vs に
 The particle で
 The difference between particles で and に
-How to use つもり
-Using になる
+The particle が
+は vs が
+を vs が
+The particle と
+The particle や
+The particle から
+The particle まで
+The particle までに
+The verbs ある and いる
+Conjugation of る verbs
+Conjugation of う verbs
+Conjugation of irregular verbs (する and くる)
 The continuative form of verbs
+Conjugation of い adjectives
+Conjugation of な adjectives
+The particle より
+～の方
+The sentence ending particle の
+と言う
+Using なる
+Using になる
+Making a decision
+The te form of verbs
+Present progressive and continuous state ～ている
+Asking for permission (～てもいい) and prohibition (～てはいけない)
+ても
+The conjugation たい
+Expressing desire for objects: ～がほしい
+Stating someone else's apparent want/desire
+The particle での
+The particle には
 The particle から
 The particle ので
-The particle し
-The particle おく
-The potential form of verbs
-The conditional particle と
-The conditional conjugation ならば
-The particle もし
-The conjugation たい
-The volitional verb conjugation
-Using みる (to try)
-くれる vs もらう
-The causative form verb conjugation
-The passive form verb conjugation
-The causative-passive form verb conjugation
-The verb conjugation しまう
-The particle ばかり
-The particle ほど
-The comparison particle よう (様)
-Using みたい for comparisons
-Using ～らしい
-Using によって
-Using によると
-Using 訳
-Using とする
-Using ながら
-Using 的
 Using てから for consecutive events
-たら vs ならば
-The particle を
-へ vs に
-は vs が
-Making a decision
-を vs が
-Using ように
-Conjugating with ～ずに
-Stating someone else's apparent want/desire
-Using ことがあります
-Using なる
-using により
-saying "A instead of B"
-saying "should do"
-passive form vs intransitive verbs
-using やがる
-advanced uses of the particle も
-using について
-to try (to do something)
 ～てから vs ～たから
-particles that require ～て vs those that require ～た vs those that are agnostic
-こと vs もの
-～の方
-ても
-expressing hearsay using ～そう
-The particle での
-事にする
+The particle たり
+Using ことがあります
+Plain and informal forms
+Expressing obligation (～なければならない / ～なくてはいけない)
+Giving advice (～たほうがいい)
+How to use つもり
 予定 vs つもり
-代わりに
-ようにすること
+Expressing purpose using stem + に行く / に来る
+The potential form of verbs
+Transitive verbs
+Intransitive verbs (not transitive verbs)
 using に on intransitive verbs
-である
-と言う
-してくる
-をして、にして、として
+Resultant state: ～てある
+The particle し
+Using ながら
+Using みる (to try)
+The verb conjugation しまう
+The particle おく
+くれる vs もらう
+Favor giving and receiving: ～てあげる / ～てくれる / ～てもらう
+Ease and difficulty: ～やすい and ～にくい
+Compound verbs: ～始める, ～終わる, ～続ける
+The volitional verb conjugation
+Explanatory のだ / んだ
+Conjectural appearance using ～そう
+expressing hearsay using ～そう
+Using みたい for comparisons
+The conditional particle と
+The particle たら
+The conditional conjugation ～ば
+The conditional conjugation ならば
+たら vs ならば
+The particle もし
+particles that require ～て vs those that require ～た vs those that are agnostic
+Embedded questions (～か / ～かどうか)
+Expressing expectation: ～はずだ
+Nominalizing with の
+Using 間 and 間に
+The passive form verb conjugation
 suffering passive form
+passive form vs intransitive verbs
+The causative form verb conjugation
+The causative-passive form verb conjugation
+事にする
+Using ように
+ようにすること
+してくる
+using について
+である
+Conjugating with ～ずに
+Using 的
+The particle だけ
+The particle しか
+Time limit and opportunity: ～うちに
+Perspective: ～にとって
+In contrast to: ～に対して
+Expressing cause or blame: ～せい
+Expressing gratitude: ～おかげ
+Scope and range: ～から～にかけて
+Condition: ～さえ～ば
+Unchanged state: ～たまま
+Left unattended: ～っぱなし
+Tendency: ～がち
+Feeling and touch of: ～気味
+The particle ほど
+The particle ばかり
+The comparison particle よう (様)
+Using ～らしい
+こと vs もの
+saying "should do"
+代わりに
+saying "A instead of B"
+Formal topic: ～に関して
+Using によると
+Using によって
+using により
+Certainty: ～に違いない
+Moment of action: ～とたん
+Metaphor: ～かのようだ
+Using とする
+to try (to do something)
+Using 訳
+advanced uses of the particle も
+Inability due to circumstance: ～わけにはいかない
+Compulsion and no choice: ～ざるを得ない
+Absolute impossibility: ～っこない
+Expressing hesitation: ～かねる
+Possibility of danger: ～かねない
+Merely and nothing more than: ～にすぎない
+Focus and nothing other than: ～にほかならない
+Regardless of: ～にかかわらず
+Regardless of: ～をとわず
+Based on: ～に基づいて
+In response to: ～に応えて
+Over and concerning: ～をめぐって
+Starting with and representative: ～をはじめ
+Under the guidance and influence of: ～のもとで
+In accordance with and along: ～に沿って
+Carrying through to the end: ～ぬく
+Appearing and giving the sense of: ～げ
+using やがる
+Trigger and starting point: ～を皮切りに
+Forced outcome: ～を余儀なくされる
+Without which: ～なくしては
+In combination with: ～と相まって
+Unfavorable propensity: ～きらいがある
+Extreme limit and boundless: ～極まりない
+Fitting status: ～たるもの
+Entirely full of: ～ずくめ
+Covered in: ～まみれ
+Undeterred by: ～をものともせずに
+をして、にして、として
